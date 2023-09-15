@@ -1,9 +1,5 @@
-Largest element in the array
-Difficulty
-Easy
-Marks Available
-20.0
-Solve Problem
+**Largest element in the array**
+
 Problem Description
 Given an array nums of n integers . Find the maximum number from an array.
 
@@ -20,3 +16,29 @@ Constraints:
 
 1<= n <=100000
 -1000000 <= nums[i] <= 1000000
+
+__Solution__
+
+public class Main
+{
+    
+     public static int findLargestElement(int []nums) {
+        // Your code goes here
+        int max=Integer.MIN_VALUE;
+        for(int m : nums)
+        {
+            if(m>max)
+             max=m;
+        }
+        return max;
+    }
+	public static void main(String[] args) {
+		int[] nums={0,1,0,0,3,2};
+		for(int element : nums)
+		    System.out.print(element + " ");
+		System.out.println();
+		int n=findLargestElement(nums);
+		System.out.print(n + " ");
+	}
+}
+
