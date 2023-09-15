@@ -17,3 +17,39 @@ Explanation:
 Constraints:
 1<=N<=10^5,
 1 <= A[i] <= 10^5
+
+__Solution__
+
+public class Main
+{
+    public static int[] moveZeros(int[] nums) {
+		int nonZero=0,zero=0;
+		while(nonZero<nums.length-1)
+		{
+		    System.out.println(nonZero + " "+ zero);
+		    while(nums[nonZero]==0)
+		        nonZero++;
+		    while(nums[zero]!=0)
+		        zero++;
+		    if(nonZero>zero)
+		    {
+		        int temp=nums[nonZero];
+		        nums[nonZero]=nums[zero];
+		        nums[zero]=temp;
+		    }
+		    else
+		     nonZero++;
+		}
+		return nums;
+	}
+	public static void main(String[] args) {
+		int[] nums={1,0,0,3,2};
+		for(int element : nums)
+		    System.out.print(element + " ");
+		System.out.println();
+		nums=moveZeros(nums);
+		for(int element : nums)
+		    System.out.print(element + " ");
+	}
+}
+
