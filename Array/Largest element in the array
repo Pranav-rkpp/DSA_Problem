@@ -1,0 +1,22 @@
+Largest element in the array
+Difficulty
+Easy
+Marks Available
+20.0
+Solve Problem
+Problem Description
+Given an array nums of n integers . Find the maximum number from an array.
+
+Example 1:
+
+Input : nums=[1,20,-10,30]
+Output: 30
+The maximum element from an array is 30
+Example 2:
+
+Input: nums=[-10,-20,0,-30,5]
+Output:5
+Constraints:
+
+1<= n <=100000
+-1000000 <= nums[i] <= 1000000
