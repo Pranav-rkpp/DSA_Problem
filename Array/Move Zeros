@@ -27,7 +27,7 @@ public class Main
 		while(nonZero<nums.length-1)
 		{
 		    System.out.println(nonZero + " "+ zero);
-		    while(nums[nonZero]==0)
+		    while(nums[nonZero]==0 && nonZero<nums.length-1)
 		        nonZero++;
 		    while(nums[zero]!=0)
 		        zero++;
