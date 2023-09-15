@@ -11,20 +11,21 @@ Constrains:
 •	-1000<=nums[i]<=1000
 
 __Solution:__
-public class Main{
-      public static int[] reverseArray(int[] nums) {
-          int start=0,end=nums.length-1;
-          System.out.println(nums.length);
-          while(start<end)
-          {
-              int temp=nums[start];
-              nums[start]=nums[end];
-              nums[end]=temp;
-              start++;
-              end--;
-          }
-          return nums;
-    }
+package array;
+public class ReverseAArray {
+	public static int[] reverseArray(int[] nums) {
+        int start=0,end=nums.length-1;
+        System.out.println(nums.length);
+        while(start<end)
+        {
+            int temp=nums[start];
+            nums[start]=nums[end];
+            nums[end]=temp;
+            start++;
+            end--;
+        }
+        return nums;
+  }
 	public static void main(String[] args) {
 	    int[] nums={1,3,2,4,6,8};
 	     for(int element : nums)
@@ -39,4 +40,3 @@ public class Main{
 	    }
 	}
 }
-
