@@ -1,0 +1,35 @@
+**Smallest Element In Array**
+
+Given an array of integers . Find the smallest element in the array.
+
+Example 1:
+
+Input: nums = [-10,1,5,6,-11] 
+Output: -11
+Explanation: Smallest element is -11.
+Constraints:
+1<=n<=10^5
+-10^6 <=nums[i]<=10^6
+
+__Solution__
+
+public class Main
+{
+    
+     public static int findLargestElement(int []nums) {
+        // Your code goes here
+        int min=Integer.MAX_VALUE;
+        for(int m : nums)
+            if(m<min)
+             min=m;
+        return min;
+    }
+	public static void main(String[] args) {
+		int[] nums={-10,1,5,6,-11};
+		for(int element : nums)
+		    System.out.print(element + " ");
+		System.out.println();
+		int n=findLargestElement(nums);
+		System.out.print(n + " ");
+	}
+}
