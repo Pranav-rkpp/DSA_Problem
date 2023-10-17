@@ -1,0 +1,30 @@
+import java.util.HashMap;
+public class Main
+{
+	public static void main(String[] args) {
+	    System.out.println("************* Find the frequency of the array with more than one time exist *************");
+		HashMap<Integer,Integer> map = new HashMap<>();
+		int a[]={1,1,2,2,3,3,4,5,6,7,7,7,8,8,9};
+		int count=1;
+		map.put(a[0],1);
+		int i;
+		for(i=1; i<a.length; i++)
+		{
+		  //  System.out.print(i + " ");
+		    if(a[i-1]==a[i])
+		     count++;
+		    else{
+		        map.put(a[i-1],count);
+		        count=1;
+		    }
+		}
+		map.put(a[i-1],count);
+		System.out.println(map);
+		
+		for(int k : map.keySet())
+		{
+		    if(map.get(k)>1)
+		      System.out.println(k + "->" + map.get(k));
+		}
+	}
+}
