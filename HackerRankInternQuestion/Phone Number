@@ -1,0 +1,32 @@
+ public static String getPhoneNumber(String s) {
+    // Write your code here
+        String words[]=s.split(" ");
+        String Number ="";
+        HashMap <String,Integer> map = new HashMap<>();
+        map.put("one",1);
+        map.put("two",2);
+        map.put("three",3);
+        map.put("four",4);
+        map.put("five",5);
+        map.put("six",6);
+        map.put("seven",7);
+        map.put("eight",8);
+        map.put("nine",9);
+        map.put("zero",0);
+        
+        for(int k =0;k<words.length;k++){
+            if(words[k].equals("double"))
+            {
+                for(int i=0;i<2;i++)  Number+=map.get(words[k+1]);
+                k++;
+            }
+            else if(words[k].equals("triple"))
+            {
+                for(int j=0;j<3;j++)  Number+=map.get(words[k+1]);
+                k++;
+            }
+            else  Number+=map.get(words[k]);       
+        }
+        return Number; 
+    }
+}
