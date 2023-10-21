@@ -1,4 +1,6 @@
- public static String getPhoneNumber(String s) {
+#  With Using HashMap:
+
+public static String getPhoneNumber(String s) {
     // Write your code here
         String words[]=s.split(" ");
         String Number ="";
@@ -29,4 +31,67 @@
         }
         return Number; 
     }
+}
+
+
+# Without Using HashMap:
+
+import java.util.Arrays;
+public class Main
+{
+	public static void main(String[] args) {
+		String sentence ="five two triple nine double three triple seven one";
+		String words[]=sentence.split(" ");
+		String[] word = new String[10];
+		String Number="";
+		for(int i=0;i<10;i++)
+		{
+		    if(i==0) word[i]="zero";
+		    else if(i==1) word[i]="one";
+		    else if(i==2) word[i]="two";
+		    else if(i==3) word[i]="three";
+		    else if(i==4) word[i]="four";
+		    else if(i==5) word[i]="five";
+		    else if(i==6) word[i]="six";
+		    else if(i==7) word[i]="seven";
+		    else if(i==8) word[i]="eight";
+		    else if(i==9) word[i]="nine";
+		}
+		for(int k=0;k<words.length;k++)
+		{
+		    
+		    if(words[k].equals("double")){
+		        int temp=0;
+		        for(String s : word){
+		            if(words[k+1].equals(s)){
+		               temp=Arrays.asList(word).indexOf(words[k+1]);
+		            }
+		        }
+		        for(int j=0;j<2;j++){
+		            Number+=String.valueOf(temp);
+		        }
+		        k++;
+		    }
+		    else if(words[k].equals("triple")){
+		        int temp=0;
+		        for(String s : word){
+		            if(words[k+1].equals(s)){
+		               temp=Arrays.asList(word).indexOf(words[k+1]);
+		            }
+		        }
+		        for(int j=0;j<3;j++){
+		            Number+=String.valueOf(temp);
+		        }
+		        k++;
+		    }
+		    else{
+		        for(String s : word){
+		            if(words[k].equals(s)){
+		               Number+=String.valueOf(Arrays.asList(word).indexOf(s));
+		            }
+		        }
+		    }
+		}
+		System.out.println(Number);
+	}
 }
