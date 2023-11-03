@@ -1,0 +1,68 @@
+class Node{
+    int value;
+    Node next;
+    Node(int value){
+        this.next = null;
+        this.value = value;
+    }
+}
+class LinkedList{
+    Node head;
+    LinkedList(){
+        this.head = null;
+    }
+    void push(int value){
+        Node newNode = new Node(value);
+        if(head == null) head = newNode;
+        else{
+            Node current = head;
+            while(current.next != null) current = current.next;
+            current.next = newNode;
+        }
+    }
+    boolean isEmpty(){
+        return head == null;   
+    }
+    int peek(){
+        Node current = head;
+        while(current.next != null) current = current.next;
+        return current.value;
+    }
+    int pop(){
+        if(isEmpty()){
+            System.out.println("--->There is no element in Linked List<---");
+            return -1;
+        }
+        Node current = head;
+        while(current.next.next != null) current = current.next;
+        int deletedValue = current.next.value;
+        current.next = null;
+        return deletedValue;
+    }
+    void display(){
+        if(head == null) System.out.println("--->There is no value in Linked List<---");
+        else{
+            Node current = head;
+            while(current != null){
+                System.out.println(" Element in the Linked List " + current.value);
+                current = current.next;
+            }
+        }
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList();
+		ll.display();
+		ll.push(10);
+		ll.push(20);
+		ll.push(30);
+		ll.push(40);
+		ll.push(50);
+		ll.display();
+		System.out.println("Popped Value from the Linked List " + ll.pop());
+		ll.display();
+		System.out.println("Top element in the Linked List " + ll.peek());
+	}
+}
